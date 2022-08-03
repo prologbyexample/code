@@ -2,8 +2,6 @@
 
 Prolog code examples accompanying the blog [prologbyexample.blogspot.com](https://prologbyexample.blogspot.com)
 
-![logo](logo/prologbyexample.png?raw=true "Logo")
-
 <img src="https://raw.githubusercontent.com/prologbyexample/prologbyexample/main/logo/prologbyexample.png" width=50% height=50%>
 
 <!--
