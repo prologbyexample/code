@@ -1,6 +1,6 @@
 ### Prolog By Example
 
-Prolog code examples accompanying the blog [prologbyexample.blogspot.com](prologbyexample.blogspot.com)
+Prolog code examples accompanying the blog [prologbyexample.blogspot.com](https://prologbyexample.blogspot.com)
 
 <!--
 **prologbyexample/prologbyexample** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
