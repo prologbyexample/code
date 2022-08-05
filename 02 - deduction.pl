@@ -10,4 +10,4 @@ parent(martha, sally).
 ancestor(X,Y) :- parent(X,Y).
 ancestor(X,Y) :- parent(X,Z), ancestor(Z,Y).
 
-sibling(X,Y) :- parent(Z,X), parent(Z,Y), not(X=Y).
+sibling(X,Y) :- parent(Z,X), parent(Z,Y), dif(X,Y).
