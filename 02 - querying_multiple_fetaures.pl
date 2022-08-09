@@ -8,4 +8,4 @@ tasty(cherry).
 % red fruit
 red(apple).
 red(cherry).
-red(grapes).
+red(grape).
