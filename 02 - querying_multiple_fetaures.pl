@@ -1,4 +1,4 @@
-% Example 02 - Querying Multiple Features
+% Example 02 - Querying Multiple Properties
 
 % simple facts
 tasty(apple).
