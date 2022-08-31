@@ -1,4 +1,4 @@
-% Example 02 - Querying Multiple Properties
+% Example 03 - Querying With Variables
 
 % simple facts
 tasty(apple).
