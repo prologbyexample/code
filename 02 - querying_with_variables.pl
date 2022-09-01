@@ -1,4 +1,4 @@
-% Example 03 - Querying With Variables
+% Example 02 - Querying With Variables
 
 % red fruit
 red(apple).
