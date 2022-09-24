@@ -1,4 +1,4 @@
-% Example 06 - Recursion First Example
+% Example 07 - Recursion First Example
 
 % parent facts
 parent(john, jane).
