@@ -8,8 +8,8 @@ parent(martha, sally).
 parent(deirdre, martha).
 
 % grandparent
-grandparent(X, Z) :- parent(X, Y), parent(Y,Z).
+grandparent(X, Y) :- parent(X, A), parent(A,Y).
 
 % ancestor recursive definition
 ancestor(X,Y) :- parent(X,Y).
-ancestor(X,Y) :- parent(X,Z), ancestor(Z,Y).
+ancestor(X,Y) :- parent(X,A), ancestor(A,Y).
