@@ -1,5 +1,7 @@
-% Example 08 - Recursion Third Example With Accumulator
+% Example 09 - Recursion With An Accumulator
 
-% length of a list
-len([], 0).
-len([_|T], L) :- len(T, M), L is M+1.
+% recursive definition of reversed
+reverse([],Z,Z).
+reverse([H|T],Z,A) :- reverse(T,Z,[H|A]).
+
+rev(X,Y) :- reverse(X,Y,[]).
