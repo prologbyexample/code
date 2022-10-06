@@ -1,4 +1,4 @@
-% Example 08 - Recursion Second Example
+% Example 08 - Recursion With Lists
 
 % are two lists the same?
 same([],[]).
