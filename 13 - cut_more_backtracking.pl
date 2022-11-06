@@ -1,8 +1,12 @@
-% Example 13 - Termination
+% Example 13 - The Cut With More Backtracking
 
-% length of a list
-len([], 0).
-len([_H|T], L) :- len(T, M), L is M+1.
+% homemade food
+homemade(soup).
+homemade(pizza) :- !.
+homemade(fish).
 
-% len2 with cut
-len2(X,Y) :- len(X,Y), !.
+% ripe fruit
+ripe(apple).
+ripe(banana).
+
+meal(Main, Fruit) :- homemade(Main), ripe(Fruit).
