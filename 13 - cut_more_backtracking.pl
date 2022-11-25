@@ -1,12 +1,14 @@
 % Example 13 - The Cut With More Backtracking
 
-% homemade food
-homemade(soup).
-homemade(pizza) :- !.
+% main meal
+homemade(pizza). 
+homemade(soup). 
 homemade(fish).
 
-% ripe fruit
-ripe(apple).
+% dessert
+ripe(apple). 
+ripe(orange). 
 ripe(banana).
 
-meal(Main, Fruit) :- homemade(Main), ripe(Fruit).
+% meal has tasty dish and ripe fruit
+meal(Main, Fruit) :- homemade(Main), !, ripe(Fruit).
