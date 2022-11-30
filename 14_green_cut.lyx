@@ -1,0 +1,757 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass scrbook
+\use_default_options true
+\begin_modules
+logicalmkup
+\end_modules
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "berasans" "default"
+\font_typewriter "courier" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype true
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\float_placement H
+\paperfontsize 10
+\spacing single
+\use_hyperref false
+\papersize custom
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\paperwidth 6in
+\paperheight 9in
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation skip
+\defskip 10pt
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Chapter
+The Cut & Efficiency
+\end_layout
+
+\begin_layout Standard
+The cut can be used to improve the procedural efficiency of a prolog definition.
+\end_layout
+
+\begin_layout Standard
+We'll explore this with a minimal expample of a property that relates the
+ temperate of water to its state.
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=Prolog,basicstyle={\scriptsize\ttfamily},frame=lines,aboveskip={\bigskipamount}"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+% Example 14 - The Cut For Efficiency
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+% water/2 relates temperature to state
+\end_layout
+
+\begin_layout Plain Layout
+
+water(Temp, solid) :- Temp =< 0.
+\end_layout
+
+\begin_layout Plain Layout
+
+water(Temp, liquid) :- Temp > 0, Temp < 100.
+\end_layout
+
+\begin_layout Plain Layout
+
+water(Temp, gas) :- Temp >= 100.
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+% water2/2 uses the cut to be more efficient
+\end_layout
+
+\begin_layout Plain Layout
+
+water2(Temp, solid) :- Temp =< 0, !.
+\end_layout
+
+\begin_layout Plain Layout
+
+water2(Temp, liquid) :- Temp > 0, Temp < 100, !.
+\end_layout
+
+\begin_layout Plain Layout
+
+water2(Temp, gas) :- Temp >= 100.
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The propery 
+\begin_inset Flex Code
+status open
+
+\begin_layout Plain Layout
+water(Temp, solid)
+\end_layout
+
+\end_inset
+
+ is true if 
+\begin_inset Flex Code
+status open
+
+\begin_layout Plain Layout
+Temp
+\end_layout
+
+\end_inset
+
+ is less than or equal to 0.
+ The property 
+\begin_inset Flex Code
+status open
+
+\begin_layout Plain Layout
+water(Temp, liquid)
+\end_layout
+
+\end_inset
+
+ is true if 
+\begin_inset Flex Code
+status open
+
+\begin_layout Plain Layout
+Temp
+\end_layout
+
+\end_inset
+
+ is more than 0 and also less than 100.
+ Finally, 
+\begin_inset Flex Code
+status open
+
+\begin_layout Plain Layout
+water(Temp, gas)
+\end_layout
+
+\end_inset
+
+ is true if 
+\begin_inset Flex Code
+status open
+
+\begin_layout Plain Layout
+Temp
+\end_layout
+
+\end_inset
+
+ is more than or equal to 100.
+ 
+\end_layout
+
+\begin_layout Standard
+These three rules simply relate the temperate of water in degrees centigrade
+ to its states.
+ Water at or below 0ºC is solid ice, between 0ºC and 100ºC it is liquid,
+ and at or above 100ºC it is a gas, steam.
+\end_layout
+
+\begin_layout Standard
+The comparison operators less than or equal to 
+\begin_inset Flex Code
+status open
+
+\begin_layout Plain Layout
+=<
+\end_layout
+
+\end_inset
+
+, less than 
+\begin_inset Flex Code
+status open
+
+\begin_layout Plain Layout
+<
+\end_layout
+
+\end_inset
+
+, more than 
+\begin_inset Flex Code
+status open
+
+\begin_layout Plain Layout
+>
+\end_layout
+
+\end_inset
+
+, and more than or equal to 
+\begin_inset Flex Code
+status open
+
+\begin_layout Plain Layout
+>=
+\end_layout
+
+\end_inset
+
+, apply to numerical values and are similar to most other programming languages.
+ The only difference is that in prolog less than or equal to is 
+\begin_inset Flex Code
+status open
+
+\begin_layout Plain Layout
+=<
+\end_layout
+
+\end_inset
+
+ and not 
+\begin_inset Flex Code
+status open
+
+\begin_layout Plain Layout
+<=
+\end_layout
+
+\end_inset
+
+ like most languages.
+\end_layout
+
+\begin_layout Subsubsection*
+Inefficient Solution Search
+\end_layout
+
+\begin_layout Standard
+Lets test 
+\begin_inset Flex Code
+status open
+
+\begin_layout Plain Layout
+water/2
+\end_layout
+
+\end_inset
+
+ with a simple query to be sure it behaves as we expect.
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=Prolog,basicstyle={\scriptsize\ttfamily},frame=lines,aboveskip={\bigskipamount}"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+?- water(-10, solid).
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+true
+\end_layout
+
+\begin_layout Plain Layout
+
+false
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Prolog gives us a 
+\series bold
+true
+\series default
+, confirming that water at -10ºC is indeed solid ice.
+ Perhaps surprisingly, prolog asks to search for other answers.
+ Given the go-ahead, prolog returns 
+\series bold
+false
+\series default
+, indicating no other answers.
+ 
+\end_layout
+
+\begin_layout Standard
+Let's try another querying, this time with a variable, and ask 
+\begin_inset Quotes eld
+\end_inset
+
+what is the state of water at 50ºC?
+\begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=Prolog,basicstyle={\scriptsize\ttfamily},frame=lines,aboveskip={\bigskipamount}"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+?- water(50, X).
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+X = liquid
+\end_layout
+
+\begin_layout Plain Layout
+
+false
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Prolog confirms water at 50ºC is a liquid.
+ But again, prolog asks to find additional answers.
+ When given the go-ahead, again prolog fails to find additional solutions.
+ To be clear, prolog isn't telling us 
+\begin_inset Flex Code
+status open
+
+\begin_layout Plain Layout
+X=liquid
+\end_layout
+
+\end_inset
+
+ is false, it is telling is that 
+\begin_inset Flex Code
+status open
+
+\begin_layout Plain Layout
+X=liquid
+\end_layout
+
+\end_inset
+
+ is a valid solution, and that other attemps to satisfy 
+\begin_inset Flex Code
+status open
+
+\begin_layout Plain Layout
+water(50,X)
+\end_layout
+
+\end_inset
+
+ failed.
+\end_layout
+
+\begin_layout Standard
+Why is prolog trying to find additional solutions after it has found the
+ first one? The reason is that there are three rules for 
+\begin_inset Flex Code
+status open
+
+\begin_layout Plain Layout
+water/2
+\end_layout
+
+\end_inset
+
+ and prolog must try each one just in case more than one does satisfy the
+ query.
+ Prolog doesn't know the additional rules for 
+\begin_inset Flex Code
+status open
+
+\begin_layout Plain Layout
+water/2
+\end_layout
+
+\end_inset
+
+ won't be satisfied until it tries them.
+\end_layout
+
+\begin_layout Standard
+Because we know that water can only be in one state, solid, liquid or gas,
+ we can say that prolog's search for additional solutions after finding
+ one answer is inefficient.
+ To be clear, prolog doesn't know water can only be in one state, so it
+ is doing the right thing testing to see if each of the three rules for
+ water states can be satisfied.
+\end_layout
+
+\begin_layout Standard
+In our small example, there is no real harm from this inefficiency.
+ In larger, more complex, projects, it is possible that testing the body
+ of such rules is a lot of work, and should be avoided if at all possible.
+\end_layout
+
+\begin_layout Subsubsection*
+Efficient Search With The Cut
+\end_layout
+
+\begin_layout Standard
+When one of the 
+\begin_inset Flex Code
+status open
+
+\begin_layout Plain Layout
+water/2
+\end_layout
+
+\end_inset
+
+ rules is satisfied, we don't want prolog to try any others.
+ This is a natural fit for the cut.
+ Remember, the cut commits prolog to the solution is has found thus far
+ in the current rule.
+ and prevents further backtracking across it.
+ That's what we want, for prolog to commit to the water state it has found
+ and not backtrack to the next 
+\begin_inset Flex Code
+status open
+
+\begin_layout Plain Layout
+water/2
+\end_layout
+
+\end_inset
+
+ rule.
+\end_layout
+
+\begin_layout Standard
+The following are updated rules for a new 
+\begin_inset Flex Code
+status open
+
+\begin_layout Plain Layout
+water2/2
+\end_layout
+
+\end_inset
+
+ property.
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=Prolog,basicstyle={\scriptsize\ttfamily},frame=lines,aboveskip={\bigskipamount}"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+% water2/2 uses the cut to be more efficient
+\end_layout
+
+\begin_layout Plain Layout
+
+water2(Temp, solid) :- Temp =< 0, !.
+\end_layout
+
+\begin_layout Plain Layout
+
+water2(Temp, liquid) :- Temp > 0, Temp < 100, !.
+\end_layout
+
+\begin_layout Plain Layout
+
+water2(Temp, gas) :- Temp >= 100.
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+A cut has been placed at the end of rules.
+ If prolog reaches a cut, it means the body of the rule has been satisfied
+ - the state of the water has been confirmed - and no further backtracking
+ is needed.
+ 
+\end_layout
+
+\begin_layout Standard
+Actually, the last rule does't have a cut at the end.
+ There is not harm in adding one, but it isn't needed.
+ This is because prolog works through these rules in order, and if the last
+ rule for gaseous water is satisfied, it it is only because the previous
+ two rules were not satisfied.
+\end_layout
+
+\begin_layout Standard
+Lets test this new 
+\begin_inset Flex Code
+status open
+
+\begin_layout Plain Layout
+water2/2
+\end_layout
+
+\end_inset
+
+ with the first query again.
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=Prolog,basicstyle={\scriptsize\ttfamily},frame=lines,aboveskip={\bigskipamount}"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+?- water2(-10, solid).
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+true
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+This time prolog confirms 
+\series bold
+true
+\series default
+ and terminates immediately.
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=Prolog,basicstyle={\scriptsize\ttfamily},frame=lines,aboveskip={\bigskipamount}"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+?- water2(50, X).
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+X = liquid
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Again, prolog finds one answer and terminates immediately.
+ 
+\end_layout
+
+\begin_layout Paragraph*
+Green Cut
+\end_layout
+
+\begin_layout Standard
+The definitions of 
+\begin_inset Flex Code
+status open
+
+\begin_layout Plain Layout
+water/2
+\end_layout
+
+\end_inset
+
+ and 
+\begin_inset Flex Code
+status open
+
+\begin_layout Plain Layout
+water2/2
+\end_layout
+
+\end_inset
+
+ lead to exactly the same answers to any query.
+ We say two programs are 
+\series bold
+logically equivalent
+\series default
+ if they give the same answers to any query.
+\end_layout
+
+\begin_layout Standard
+The only difference is that 
+\begin_inset Flex Code
+status open
+
+\begin_layout Plain Layout
+water2/2
+\end_layout
+
+\end_inset
+
+ avoids uneccessary backtracking.
+ 
+\end_layout
+
+\begin_layout Standard
+The cut as used in 
+\begin_inset Flex Code
+status open
+
+\begin_layout Plain Layout
+water2/2
+\end_layout
+
+\end_inset
+
+ is called a 
+\series bold
+green cut
+\series default
+.
+ It is a safe use of the cut because its presence or absence does not change
+ the answers to any query.
+ 
+\end_layout
+
+\begin_layout Subsubsection*
+Key Points
+\end_layout
+
+\begin_layout Itemize
+A cut at the end of a rule causes prolog to commit to any solution found
+ thus far, and prevent searching for more solutions.
+\end_layout
+
+\begin_layout Itemize
+Two programs are 
+\series bold
+logically equivalent
+\series default
+ if they give the same anwers to any query.
+\end_layout
+
+\begin_layout Itemize
+A 
+\series bold
+green cut
+\series default
+ is a safe use of the cut because its presence or absence does not change
+ the answers given to any query.
+ The only difference it makes is in procedural efficiency.
+\end_layout
+
+\end_body
+\end_document
