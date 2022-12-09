@@ -12,8 +12,8 @@ likes(mary, X) :- fruit(X).
 % James like all fruit, as long as it is yellow
 likes(james, X) :- fruit(X), yellow(X).
 
-% John likes all fruit, except yellow fruit
-likes(jo, X) :- fruit(X), neg(yellow(X)).
+% Sally likes all fruit, except yellow fruit
+likes(sally, X) :- fruit(X), neg(yellow(X)).
 
 % negation as failure
 neg(G) :- call(G), !, fail.
