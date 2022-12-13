@@ -11,7 +11,7 @@ yellow(banana).
 % Mary likes all fruit 
 likes(mary, X) :- fruit(X).
 
-% James like all fruit, as long as it is yellow
+% James likes all fruit, as long as it is yellow
 likes(james, X) :- fruit(X), yellow(X).
 
 % Sally likes all fruit, except yellow fruit
