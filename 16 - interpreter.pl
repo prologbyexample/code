@@ -1,7 +1,7 @@
 % Example 16 - Interpreter Metaprogramming
 
 % fruit
-fruit(apple) :- true. 
+fruit(apple). 
 fruit(orange). 
 fruit(banana).
 
