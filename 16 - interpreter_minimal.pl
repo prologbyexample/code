@@ -4,11 +4,7 @@
 mammal(dog).
 mammal(cat).
 
-% relations
-animal(X) :- mammal(X).
-lifeform(X) :- animal(X).
 
 % simplest meta-interpreter
-prove(true).
-prove(H) :- clause(H,B), prove(B),
+prove(H) :- clause(H,B), B=true,
     write(H), write(" <- "), writeln(B).
