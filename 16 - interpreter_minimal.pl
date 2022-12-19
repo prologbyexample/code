@@ -9,6 +9,5 @@ animal(X) :- mammal(X).
 
 
 % simplest meta-interpreter
-prove(true) :- !.
-%prove((A,B)):- !, prove(A), prove(B).
+prove(true).
 prove(A) :- clause(A,B), prove(B), write(A), write(" <- "), writeln(B).
