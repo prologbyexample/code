@@ -4,6 +4,8 @@
 same([],[]).
 same([H1|T1],[H2|T2]) :- H1=H2, same(T1,T2).
 
+% example of a multi-goal rule
+test(X) :- one(X), two(X), three(X).
 
 % meta-interpreter for rules with multiple goals
 prove(true) :- !.
