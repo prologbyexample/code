@@ -42,10 +42,12 @@ journey(X, Y, J2) :-
 
 prove(true, _) :- !.
 prove(A=B, _) :- !, A=B.
+prove(write(X),_) :- !, write(X).
+prove(writeln(X),_) :- !, writeln(X).
 prove(!,_) :- !, ( true ; throw(cut) ).
 prove((A,B), N):- !, prove(A, N), prove(B, N).
 prove(H, N) :-
-    write("N = "), writeln(N),
+    %write("N = "), writeln(N),
     %write(H), write(" <- "), writeln(B),
     N > 0,
     N1 is N-1,
@@ -58,7 +60,7 @@ prove2(write(X),_) :- !, write(X).
 prove2(writeln(X),_) :- !, writeln(X).
 prove2((A,B), N):- !, prove2(A, N), prove2(B, N).
 prove2(H, N) :-
-    write("N = "), writeln(N),
+    %write("N = "), writeln(N),
     %write(H), write(" <- "), writeln(B),
     N > 0,
     N1 is N-1,
