@@ -44,13 +44,13 @@ prove(true, _) :- !.
 prove(A=B, _) :- !, A=B.
 prove(write(X),_) :- !, write(X).
 prove(writeln(X),_) :- !, writeln(X).
-prove((A,B), N):- !, prove2(A, N), prove2(B, N).
+prove((A,B), N):- !, prove(A, N), prove(B, N).
 prove(H, N) :-
     %write("N = "), writeln(N),
     %write(H), write(" <- "), writeln(B),
     N > 0,
     N1 is N-1,
-    clause(H,B), prove2(B, N1).
+    clause(H,B), prove(B, N1).
 
 % prove( journey(a,e,X), 5).
 % journey(a,e,X) - doesn't terminate
