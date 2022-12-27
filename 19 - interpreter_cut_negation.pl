@@ -1,29 +1,23 @@
+% Example 18 - Meta-Interpreter For The Cut
+
 fruit(apple).
 fruit(orange) :- !.
 fruit(banana).
 
-% meta-interpreter that covers deduction
+% meta-interpreter that handles the cut
 prove(true) :- !.
 prove(!) :- !, ( true ; throw(cut) ).
 prove((A,B)):- !, prove(A), prove(B).
-prove(H) :-  
-    %prove(B),
+prove(H) :- 
     catch((clause(H,B), prove(B)), cut, fail),
     write(H), write(" <- "), writeln(B).
 
+% bad/1 will cause a resource error
+bad(X) :- bad(bad(X)).
 
-% Example 07 - Introducing Recursion
+% numerology/1 throws an exception if X=13
+numerology(X):- \+ X=13.
+numerology(X):- X=13, throw(unlucky).
 
-% parent facts
-parent(john, jane).
-parent(john, james).
-parent(sally, jane).
-parent(martha, sally).
-parent(deirdre, martha).
-
-% grandparent
-grandparent(X, Y) :- parent(X, A), parent(A,Y).
-
-% ancestor recursive definition
-ancestor(X,Y) :- parent(X,Y).
-ancestor(X,Y) :- parent(X,A), ancestor(A,Y).
+% testnumber handles that exception
+testnumber(X) :- catch(numerology(X), unlucky, writeln("unlucky number")).
