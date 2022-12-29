@@ -11,4 +11,3 @@ prove((A,B)):- !, prove(A), prove(B).
 prove(H) :- 
     catch((clause(H,B), prove(B)), cut, fail),
     write(H), write(" <- "), writeln(B).
-    
