@@ -1,4 +1,4 @@
-% Example 20 - Meta-Interpreter For Multiple Goals
+% Example 20 - Meta-Interpreter With Fixed Depth Search
 
 % map locations and paths
 % 
@@ -8,7 +8,6 @@
 %  |       |
 %  g   h   i
 
-% additional path (y)
 path(a,b). path(b,c). path(a,d).
 path(d,e). path(e,f). path(d,g). 
 path(f,c). path(f,i).
@@ -19,8 +18,8 @@ connected(X,Y) :- path(Y,X).
 journey(X, Y, [(X,Y)]) :- 
     %write("testing -- "), writeln((X,Y)),
     connected(X,Y).
-journey(X, Y, J2) :-
-    [(X,A)|J1]=J2,
+journey(X, Y, J) :-
+    [(X,A)|J1]=J,
     %write("testing .. "), writeln((X,A)),
     connected(X,A),
     journey(A,Y, J1).
