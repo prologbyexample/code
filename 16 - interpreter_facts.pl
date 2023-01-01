@@ -1,4 +1,4 @@
-% Example 16 - Minimal Meta-Interpreter
+% Example 16 - Minimal Meta-Interpreter For Facts
 
 % facts
 mammal(dog).
