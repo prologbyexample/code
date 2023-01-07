@@ -1,6 +1,6 @@
 % Example 20 - Meta-Interpreter With Fixed Depth Search
 
-% map locations and paths
+% map locations and links
 % 
 %  a - b - c
 %  |       |
@@ -8,12 +8,12 @@
 %  |       |
 %  g   h   i
 
-path(a,b). path(b,c). path(a,d).
-path(d,e). path(e,f). path(d,g). 
-path(f,c). path(f,i).
+link(a,b). link(b,c). link(a,d).
+link(d,e). link(e,f). link(d,g). 
+link(f,c). link(f,i).
 
-connected(X,Y) :- path(X,Y).
-connected(X,Y) :- path(Y,X).
+connected(X,Y) :- link(X,Y).
+connected(X,Y) :- link(Y,X).
 
 journey(X, Y, [(X,Y)]) :- 
     %write("testing -- "), writeln((X,Y)),
