@@ -40,8 +40,8 @@ prove(H, Depth) :-
     prove(B, NextDepth).
 
 
-%prove(connected(a,b),2).
-%prove(connected(a,b),1).
+% prove(connected(a,b),2).
+% prove(connected(a,b),1).
 %
 % prove( journey(a,e,X), 4).
 % prove( journey(a,e,X), 6).
