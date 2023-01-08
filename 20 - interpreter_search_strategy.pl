@@ -8,14 +8,12 @@
 %  |       |
 %  g   h   i
 
-% Example 20 - Meta-Interpreter With Fixed Depth Search
-
 % map locations and links
 link(a,b). link(b,c). link(a,d).
 link(d,e). link(e,f). link(d,g).
 link(f,c). link(f,i).
 
-% two rooms are connected by a link
+% two rooms are connected if linked
 connected(X,Y) :- link(X,Y).
 connected(X,Y) :- link(Y,X).
 
