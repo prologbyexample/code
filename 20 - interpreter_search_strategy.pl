@@ -29,11 +29,3 @@ prove(H, Depth) :-
     Depth > 0,
     NextDepth is Depth-1,
     clause(H,B), prove(B, NextDepth).
-
-
-% prove(connected(a,b),2).
-% prove(connected(a,b),1).
-%
-% prove( journey(a,e,X), 4).
-% prove( journey(a,e,X), 6).
-% journey(a,e,X) - doesn't terminate
