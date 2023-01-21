@@ -8,7 +8,7 @@
 %  |       |
 %  g   h   i
 
-% map locations and links
+% maze locations and links
 link(a,b). link(b,c). link(a,d).
 link(d,e). link(e,f). link(d,g).
 link(f,c). link(f,i).
