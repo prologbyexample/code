@@ -1,6 +1,6 @@
 % Example 20 - Meta-Interpreter With Fixed Depth Search
 
-% map locations and links
+% maze locations and links
 % 
 %  a - b - c
 %  |       |
