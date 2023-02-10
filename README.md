@@ -2,7 +2,8 @@
 
 Prolog code examples accompanying the blog [prologbyexample.blogspot.com](https://prologbyexample.blogspot.com)
 
-<img src="https://raw.githubusercontent.com/prologbyexample/prologbyexample/main/logo/prologbyexample.png" width=50% height=50%>
+<img src="https://raw.githubusercontent.com/prologbyexample/prologbyexample/main/logo/prologbyexample_cover.png" width=20% height=20%>
+[Prolog By Example](https://www.amazon.com/dp/B0BTQ7P69H)
 
 <!--
 **prologbyexample/prologbyexample** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
