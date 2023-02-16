@@ -1,8 +1,10 @@
 ### Prolog By Example
 
-Prolog code examples accompanying the blog [prologbyexample.blogspot.com](https://prologbyexample.blogspot.com)
+Prolog code examples accompanying the book and blog
 
 <img src="https://raw.githubusercontent.com/prologbyexample/prologbyexample/main/logo/prologbyexample_cover.png" width=20% height=20%>
+
+Blog [prologbyexample.blogspot.com](https://prologbyexample.blogspot.com)
 
 Book [Prolog By Example](https://www.amazon.com/dp/B0BTQ7P69H)
 
