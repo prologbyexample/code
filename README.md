@@ -1,6 +1,6 @@
 ### Prolog By Example
 
-Prolog code examples accompanying the book and blog
+Prolog code examples accompanying the book and blog.
 
 <img src="https://raw.githubusercontent.com/prologbyexample/prologbyexample/main/logo/prologbyexample_cover.png" width=20% height=20%>
 
