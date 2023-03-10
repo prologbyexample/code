@@ -1,4 +1,4 @@
-% Example 18 - Meta-Interpreter For The Cut
+% Example 19 - Meta-Interpreter For The Cut
 
 fruit(apple).
 fruit(orange) :- !.
